@@ -2,7 +2,7 @@ local Configs_HUB = {
   Cor_Hub = Color3.fromRGB(15, 15, 15),
   Cor_Options = Color3.fromRGB(15, 15, 15),
   Cor_Stroke = Color3.fromRGB(255, 5, 5),
-  Cor_Text = Color3.fromRGB(240, 240, 240),
+  Cor_Text = Color3.fromRGB(0, 255, 182),  -- 240, 240, 240
   Cor_DarkText = Color3.fromRGB(240, 240, 240),
   Corner_Radius = UDim.new(0,4),
   Text_Font = Enum.Font.FredokaOne
@@ -357,7 +357,7 @@ function MakeWindow(Configs)
   })
   
   local Minimize_BTN = Create("TextButton", ButtonsFrame, {
-    Text = "➖",
+    Text = "-",
     TextColor3 = Configs_HUB.Cor_Text,
     Size = UDim2.new(0.5, 0, 1, 0),
     BackgroundTransparency = 1,
@@ -379,7 +379,7 @@ function MakeWindow(Configs)
   end)
   
   local Close_Button = Create("TextButton", ButtonsFrame, {
-    Text = "❌",
+    Text = "×",
     TextYAlignment = "Bottom",
     TextColor3 = Configs_HUB.Cor_Text,
     Size = UDim2.new(0.5, 0, 1, 0),
@@ -425,7 +425,7 @@ function MakeWindow(Configs)
       Size = UDim2.new(0.35, 0, 0.3, 0),
       Position = UDim2.new(0.1, 0, 0.5, 0),
       BackgroundColor3 = Configs_HUB.Cor_Hub,
-      Text = "حذف السكربتات",
+      Text = "حذف السكربت",
       Font = Configs_HUB.Text_Font,
       TextColor3 = Color3.fromRGB(240, 0, 0),
       TextSize = 20

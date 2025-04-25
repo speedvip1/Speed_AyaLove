@@ -2,7 +2,7 @@ local Configs_HUB = {
   Cor_Hub = Color3.fromRGB(15, 15, 15),
   Cor_Options = Color3.fromRGB(15, 15, 15),
   Cor_Stroke = Color3.fromRGB(255, 5, 5),
-  Cor_Text = Color3.fromRGB(0, 255, 182),  -- 240, 240, 240
+  Cor_Text = Color3.fromRGB(240, 240, 240),  -- 240, 240, 240
   Cor_DarkText = Color3.fromRGB(240, 240, 240),
   Corner_Radius = UDim.new(0,4),
   Text_Font = Enum.Font.FredokaOne
@@ -1565,7 +1565,7 @@ function MakeWindow(Configs)
     
     local Frame = Create("Frame", parent, {
       Size = UDim2.new(1, 0, 0, 110),
-      BackgroundColor3 = Color3.fromRGB(40, 40, 40),
+      BackgroundColor3 = Color3.fromRGB(40, 40, 40),      
       Name = "Frame",
       AutomaticSize = "Y"
     })

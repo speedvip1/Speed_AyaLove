@@ -1576,7 +1576,7 @@ function MakeWindow(Configs)
       TextXAlignment = "Left",
       BackgroundTransparency = 1,
       Position = UDim2.new(0, 12, 0, 0),
-      TextColor3 = Color3.fromRGB(255, 255, 255),
+      TextColor3 = Color3.fromRGB(0, 55, 255, 0),
       Font = Enum.Font.GothamBold,
       TextSize = 14
     })
@@ -1618,7 +1618,7 @@ function MakeWindow(Configs)
         JoinButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
         JoinButton.TextColor3 = Color3.fromRGB(150, 150, 150)
         task.wait(5)
-        JoinButton.Text = "Join"
+        JoinButton.Text = "نسخ الرابط"
         JoinButton.BackgroundColor3 = Color3.fromRGB(50, 200, 50)
         JoinButton.TextColor3 = Color3.fromRGB(220, 220, 220)
       end

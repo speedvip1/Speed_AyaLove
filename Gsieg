@@ -4,7 +4,7 @@ local Configs_HUB = {
     Cor_Options = Color3.fromRGB(30, 30, 45),      -- خلفية أغمق قليلاً للخيارات
     
     -- ألوان التحديد والإبراز
-    Cor_Stroke = Color3.fromRGB(100, 255, 200),    -- لون سكينة نيوني أخضر-أزرق
+    Cor_Stroke = Color3.fromRGB(255, 0, 200),    -- لون سكينة نيوني أخضر-أزرق
     Cor_Text = Color3.fromRGB(245, 245, 245),      -- نص أبيض نقي
     
     -- نصوص إضافية

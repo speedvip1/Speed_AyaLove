@@ -1,22 +1,15 @@
 local Configs_HUB = {
-    -- ألوان رئيسية أنيقة
-    Cor_Hub = Color3.fromRGB(25, 25, 35),          -- خلفية داكنة مع لمسة زرقاء
-    Cor_Options = Color3.fromRGB(30, 30, 45),      -- خلفية أغمق قليلاً للخيارات
-    
-    -- ألوان التحديد والإبراز
-    Cor_Stroke = Color3.fromRGB(255, 0, 0),    -- لون سكينة نيوني أخضر-أزرق
-    Cor_Text = Color3.fromRGB(245, 245, 245),      -- نص أبيض نقي
-    
-    -- نصوص إضافية
-    Cor_DarkText = Color3.fromRGB(200, 200, 200),  -- نص رمادي فاتح للعناصر غير النشطة
-    
-    -- تصميم الزوايا
-    Corner_Radius = UDim.new(0, 6),                -- زوايا أكثر نعومة
-    
-    -- الخطوط
-    Text_Font = Enum.Font.GothamMedium,            -- خط عصري وأنيق
-    Transparency = 0.05,                           -- شفافية خفيفة
-    Hover_Effect = Color3.fromRGB(50, 50, 70)      -- لون عند تمرير المؤشر
+  Cor_Hub = Color3.fromRGB(20, 0, 0),            -- أسود داكن مع لمسة حمراء
+  Cor_Options = Color3.fromRGB(40, 0, 0),        -- أسود محمر
+  Cor_Stroke = Color3.fromRGB(255, 0, 0),        -- أحمر ناري
+  Cor_Text = Color3.fromRGB(255, 50, 50),        -- أحمر فاتح للنص
+  Cor_DarkText = Color3.fromRGB(150, 0, 0),      -- أحمر داكن للنصوص الثانوية
+  Cor_ButtonHover = Color3.fromRGB(80, 0, 0),    -- لون إضافي عند تمرير الماوس
+  Cor_ButtonPressed = Color3.fromRGB(120, 0, 0), -- لون إضافي عند الضغط
+  Corner_Radius = UDim.new(0, 5),
+  Text_Font = Enum.Font.SourceSansBold,
+  Text_Size = 18,                                -- حجم نص إضافي
+  Shadow_Color = Color3.fromRGB(10, 0, 0)        -- لون الظل الإضافي
 }
 
 local CoreGui = game:GetService("CoreGui")

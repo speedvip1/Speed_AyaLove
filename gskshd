@@ -1,12 +1,26 @@
 local Configs_HUB = {
-  Cor_Hub = Color3.fromRGB(30, 20, 25),           -- خلفية بنفسجية داكنة
-  Cor_Options = Color3.fromRGB(50, 35, 45),       -- خيارات أفتح
-  Cor_Stroke = Color3.fromRGB(255, 0, 0),     -- إطار وردي
-  Cor_Text = Color3.fromRGB(255, 220, 230),       -- نص وردي فاتح
-  Cor_DarkText = Color3.fromRGB(200, 170, 180),   -- نص ثانوي
+  -- ███╗   ███╗██╗███╗   ██╗███████╗ ██████╗ ██████╗  █████╗ ███████╗████████╗
+  -- ████╗ ████║██║████╗  ██║██╔════╝██╔═══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝
+  -- ██╔████╔██║██║██╔██╗ ██║█████╗  ██║   ██║██████╔╝███████║█████╗     ██║   
+  -- ██║╚██╔╝██║██║██║╚██╗██║██╔══╝  ██║   ██║██╔══██╗██╔══██║██╔══╝     ██║   
+  -- ██║ ╚═╝ ██║██║██║ ╚████║███████╗╚██████╔╝██║  ██║██║  ██║██║        ██║   
+  -- ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝        ╚═╝   
+  
+  Cor_Hub = Color3.fromRGB(25, 0, 0),            -- Deep black-red
+  Cor_Options = Color3.fromRGB(40, 0, 0),        -- Dark red
+  Cor_Stroke = Color3.fromRGB(255, 50, 50),      -- Bright red glow
+  Cor_Text = Color3.fromRGB(255, 85, 85),        -- Red text (like Minecraft "§c")
+  Cor_DarkText = Color3.fromRGB(150, 0, 0),      -- Dark red text
   Corner_Radius = UDim.new(0, 5),
-  Text_Font = Enum.Font.SourceSansBold
+  Text_Font = Enum.Font.SourceSansBold            -- Closest to Minecraft font in Roblox
 }
+
+-- ███████╗██╗   ██╗███████╗███╗   ██╗████████╗███████╗
+-- ██╔════╝██║   ██║██╔════╝████╗  ██║╚══██╔══╝██╔════╝
+-- █████╗  ██║   ██║█████╗  ██╔██╗ ██║   ██║   ███████╗
+-- ██╔══╝  ╚██╗ ██╔╝██╔══╝  ██║╚██╗██║   ██║   ╚════██║
+-- ███████╗ ╚████╔╝ ███████╗██║ ╚████║   ██║   ███████║
+-- ╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝
 local CoreGui = game:GetService("CoreGui")
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")

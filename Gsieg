@@ -1,11 +1,22 @@
 local Configs_HUB = {
-  Cor_Hub = Color3.fromRGB(15, 15, 15),
-  Cor_Options = Color3.fromRGB(15, 15, 15),
-  Cor_Stroke = Color3.fromRGB(255, 5, 5),
-  Cor_Text = Color3.fromRGB(240, 240, 240),  -- 240, 240, 240
-  Cor_DarkText = Color3.fromRGB(240, 240, 240),
-  Corner_Radius = UDim.new(0,4),
-  Text_Font = Enum.Font.FredokaOne
+    -- ألوان رئيسية أنيقة
+    Cor_Hub = Color3.fromRGB(25, 25, 35),          -- خلفية داكنة مع لمسة زرقاء
+    Cor_Options = Color3.fromRGB(30, 30, 45),      -- خلفية أغمق قليلاً للخيارات
+    
+    -- ألوان التحديد والإبراز
+    Cor_Stroke = Color3.fromRGB(100, 255, 200),    -- لون سكينة نيوني أخضر-أزرق
+    Cor_Text = Color3.fromRGB(245, 245, 245),      -- نص أبيض نقي
+    
+    -- نصوص إضافية
+    Cor_DarkText = Color3.fromRGB(200, 200, 200),  -- نص رمادي فاتح للعناصر غير النشطة
+    
+    -- تصميم الزوايا
+    Corner_Radius = UDim.new(0, 6),                -- زوايا أكثر نعومة
+    
+    -- الخطوط
+    Text_Font = Enum.Font.GothamMedium,            -- خط عصري وأنيق
+    Transparency = 0.05,                           -- شفافية خفيفة
+    Hover_Effect = Color3.fromRGB(50, 50, 70)      -- لون عند تمرير المؤشر
 }
 
 local CoreGui = game:GetService("CoreGui")

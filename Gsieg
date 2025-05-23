@@ -687,37 +687,136 @@ function MakeWindow(Configs)
         })
     end
     
-    TextButton.MouseButton1Click:Connect(function()
-        for _,container in pairs(Containers:GetChildren()) do
+function MakeTab(Configs)
+    local TabName = Configs.Name or "Tab"
+    local TabTitle = Configs.TabTitle or false
+    local TabIcon = Configs.Icon or nil
+    local TabSize = Configs.Size or UDim2.new(1, 0, 0, 25)
+    
+    -- إنشاء إطار التبويب
+    local TabFrame = Create("Frame", ScrollBar, {
+        Size = TabSize,
+        BackgroundTransparency = 1
+    })
+    Corner(TabFrame)
+    Stroke(TabFrame)
+    
+    -- زر التبويب
+    local TabButton = Create("TextButton", TabFrame, {
+        Size = UDim2.new(1, 0, 1, 0),
+        BackgroundTransparency = 1,
+        Text = ""
+    })
+    
+    -- حاوية المحتوى (الأيقونة + النص)
+    local Content = Create("Frame", TabFrame, {
+        Size = UDim2.new(1, -10, 1, 0),
+        Position = UDim2.new(0, 10, 0, 0),
+        BackgroundTransparency = 1
+    })
+    
+    -- إضافة الأيقونة إذا وجدت
+    local Icon
+    if TabIcon then
+        Icon = Create("ImageLabel", Content, {
+            Size = UDim2.new(0, 20, 0, 20),
+            Position = UDim2.new(0, 0, 0.5, -10),
+            AnchorPoint = Vector2.new(0, 0.5),
+            BackgroundTransparency = 1,
+            Image = TabIcon,
+            ImageColor3 = textcolor
+        })
+    end
+    
+    -- نص التبويب
+    local TabText = Create("TextLabel", Content, {
+        Size = UDim2.new(1, TabIcon and -25 or 0, 1, 0),
+        Position = UDim2.new(0, TabIcon and 25 or 0, 0, 0),
+        BackgroundTransparency = 1,
+        Font = Configs_HUB.Text_Font,
+        TextColor3 = textcolor,
+        TextSize = textsize,
+        Text = TabName,
+        TextXAlignment = "Left"
+    })
+    
+    -- إنشاء حاوية المحتوى الرئيسية
+    local MainContainer = Create("ScrollingFrame", Containers, {
+        Size = UDim2.new(1, 0, 1, 0),
+        BackgroundTransparency = 1,
+        ScrollBarThickness = 2,
+        Visible = firstVisible,
+        ScrollingDirection = "Y",
+        AutomaticCanvasSize = "Y",
+        CanvasSize = UDim2.new()
+    })
+    
+    -- إضافة التنسيقات الداخلية
+    Create("UIPadding", MainContainer, {
+        PaddingLeft = UDim.new(0, 10),
+        PaddingRight = UDim.new(0, 10),
+        PaddingTop = UDim.new(0, 10),
+        PaddingBottom = UDim.new(0, 10)
+    })
+    
+    Create("UIListLayout", MainContainer, {
+        Padding = UDim.new(0, 5),
+        SortOrder = "LayoutOrder"
+    })
+    
+    -- إضافة عنوان إذا طُلب
+    if TabTitle then
+        Create("TextLabel", MainContainer, {
+            Text = "#"..string.gsub(TabName, " ", "-"),
+            TextSize = 25,
+            Font = Configs_HUB.Text_Font,
+            TextXAlignment = "Left",
+            TextColor3 = Configs_HUB.Cor_Text,
+            Size = UDim2.new(1, 0, 0, 30),
+            BackgroundTransparency = 1,
+            LayoutOrder = 0
+        })
+    end
+    
+    -- وظيفة النقر على التبويب
+    TabButton.MouseButton1Click:Connect(function()
+        for _, container in pairs(Containers:GetChildren()) do
             if container:IsA("ScrollingFrame") then
                 container.Visible = false
             end
         end
-        for _,frame in pairs(ScrollBar:GetChildren()) do
-            if frame:IsA("Frame") and frame:FindFirstChildOfClass("TextLabel") then
-                local frameTextLabel = frame:FindFirstChildOfClass("TextLabel")
-                if frameTextLabel ~= TextLabel then
-                    CreateTween(frameTextLabel, "TextColor3", Configs_HUB.Cor_DarkText, 0.3, false)
-                    frameTextLabel.TextSize = 14
-                    if frame:FindFirstChildOfClass("ImageLabel") then
-                        CreateTween(frame:FindFirstChildOfClass("ImageLabel"), "ImageColor3", Configs_HUB.Cor_DarkText, 0.3, false)
-                    end
+        
+        for _, tab in pairs(ScrollBar:GetChildren()) do
+            if tab:IsA("Frame") then
+                local text = tab:FindFirstChildOfClass("TextLabel")
+                local icon = tab:FindFirstChildOfClass("ImageLabel")
+                
+                if text then
+                    CreateTween(text, "TextColor3", Configs_HUB.Cor_DarkText, 0.3, false)
+                    text.TextSize = 14
+                end
+                
+                if icon then
+                    CreateTween(icon, "ImageColor3", Configs_HUB.Cor_DarkText, 0.3, false)
                 end
             end
         end
-        Container.Visible = true
-        CreateTween(TextLabel, "TextColor3", Configs_HUB.Cor_Text, 0.3, false)
-        TextLabel.TextSize = 15
-        if IconImage then
-            CreateTween(IconImage, "ImageColor3", Configs_HUB.Cor_Text, 0.3, false)
+        
+        MainContainer.Visible = true
+        CreateTween(TabText, "TextColor3", Configs_HUB.Cor_Text, 0.3, false)
+        TabText.TextSize = 15
+        
+        if Icon then
+            CreateTween(Icon, "ImageColor3", Configs_HUB.Cor_Text, 0.3, false)
         end
     end)
     
     firstVisible = false
-    FirstTab = false
     textsize = 14
     textcolor = Configs_HUB.Cor_DarkText
-    return Container
+    
+    -- إرجاع الحاوية الرئيسية لإضافة العناصر
+    return MainContainer
 end
   function AddButton(parent, Configs)
     local ButtonName = Configs.Name or "Button!!"

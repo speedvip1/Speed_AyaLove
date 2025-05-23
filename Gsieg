@@ -803,41 +803,29 @@ end
     
     return TextButton
 end
-  function AddToggle(parent, Configs)
+  
+function AddToggle(parent, Configs)
     local ToggleName = Configs.Name or "Toggle!!"
     local Default = Configs.Default or false
     local Callback = Configs.Callback or function() end
-    local Description = Configs.Description or nil -- إضافة وصف اختياري
+    local Description = Configs.Description or nil
     
-    -- إنشاء حاوية رئيسية للزر والوصف
-    local MainContainer = Create("Frame", parent, {
-        Size = UDim2.new(1, 0, 0, Description and 45 or 25),
-        BackgroundTransparency = 1
-    })
+    -- تحديد ارتفاع الزر حسب وجود الوصف
+    local buttonHeight = Description and 40 or 25
     
-    local TextButton = Create("TextButton", MainContainer, {
-        Size = UDim2.new(1, 0, 0, 25),
+    local TextButton = Create("TextButton", parent, {
+        Size = UDim2.new(1, 0, 0, buttonHeight),
         BackgroundColor3 = Configs_HUB.Cor_Options,
         Name = "Frame",
         Text = "",
-        AutoButtonColor = false,
-        Position = UDim2.new(0, 0, 0, 0)
+        AutoButtonColor = false
     })Corner(TextButton)Stroke(TextButton)
     
-    local TextLabel = Create("TextLabel", TextButton, {
-        TextSize = 12,
-        TextColor3 = Configs_HUB.Cor_Text,
-        Text = ToggleName,
-        Size = UDim2.new(1, -35, 1, 0),
-        Position = UDim2.new(0, 35, 0, 0),
-        BackgroundTransparency = 1,
-        TextXAlignment = "Left",
-        Font = Configs_HUB.Text_Font
-    })
-    
+    -- عنصر التبديل (Toggle)
     local Frame1 = Create("Frame", TextButton, {
         Size = UDim2.new(0, 25, 0, 15),
-        Position = UDim2.new(0, 5, 0, 5),
+        Position = UDim2.new(0, 5, Description and 0.15 or 0.5, 0),
+        AnchorPoint = Vector2.new(0, Description and 0.15 or 0.5),
         BackgroundTransparency = 1,
     })Corner(Frame1, {CornerRadius = UDim.new(1, 0)})
     local Stroke = Stroke(Frame1, {Thickness = 2})
@@ -848,22 +836,34 @@ end
         AnchorPoint = Vector2.new(0, 0.5),
         BackgroundColor3 = Configs_HUB.Cor_Stroke
     })Corner(Frame2, {CornerRadius = UDim.new(1, 0)})
-
-    -- إضافة وصف إذا كان موجوداً
+    
+    -- النص الرئيسي
+    local TextLabel = Create("TextLabel", TextButton, {
+        TextSize = 12,
+        TextColor3 = Configs_HUB.Cor_Text,
+        Text = ToggleName,
+        Size = UDim2.new(1, -35, Description and 0.5 or 1, Description and -5 or 0),
+        Position = UDim2.new(0, 35, 0, 0),
+        BackgroundTransparency = 1,
+        TextXAlignment = "Left",
+        Font = Configs_HUB.Text_Font
+    })
+    
+    -- إضافة الوصف إذا كان موجوداً
     if Description then
-        local DescLabel = Create("TextLabel", MainContainer, {
+        local DescLabel = Create("TextLabel", TextButton, {
             TextSize = 10,
             TextColor3 = Configs_HUB.Cor_DarkText,
             Text = Description,
-            Size = UDim2.new(1, -10, 0, 15),
-            Position = UDim2.new(0, 10, 0, 28),
+            Size = UDim2.new(1, -35, 0.5, -5),
+            Position = UDim2.new(0, 35, 0.5, 0),
             BackgroundTransparency = 1,
             TextXAlignment = "Left",
             Font = Configs_HUB.Text_Font,
             TextWrapped = true
         })
     end
-
+    
     local OnOff = false
     if Default then
         OnOff = true

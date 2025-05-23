@@ -743,49 +743,49 @@ end
   function AddButton(parent, Configs)
     local ButtonName = Configs.Name or "Button!!"
     local Callback = Configs.Callback or function() end
-    local Description = Configs.Description or nil -- إضافة خاصية الوصف
+    local Description = Configs.Description or nil
     
-    -- إنشاء حاوية رئيسية للزر والوصف
-    local MainContainer = Create("Frame", parent, {
-        Size = UDim2.new(1, 0, 0, Description and 45 or 25),
-        BackgroundTransparency = 1
-    })
+    -- زيادة ارتفاع الزر إذا كان هناك وصف
+    local buttonHeight = Description and 40 or 25
     
-    local TextButton = Create("TextButton", MainContainer, {
-        Size = UDim2.new(1, 0, 0, 25),
+    local TextButton = Create("TextButton", parent, {
+        Size = UDim2.new(1, 0, 0, buttonHeight),
         BackgroundColor3 = Configs_HUB.Cor_Options,
         Name = "Frame",
         Text = "",
         AutoButtonColor = false
     })Corner(TextButton)Stroke(TextButton)
     
+    -- الأيقونة
+    local ImageLabel = Create("ImageLabel", TextButton, {
+        Image = "rbxassetid://3926311105",
+        Size = UDim2.new(0, 20, 0, 20),
+        Position = UDim2.new(0, 5, Description and 0 or 0.5, Description and 2.5 or -10),
+        AnchorPoint = Description and Vector2.new(0,0) or Vector2.new(0,0.5),
+        BackgroundTransparency = 1,
+        ImageColor3 = Configs_HUB.Cor_Stroke
+    })
+    
+    -- النص الرئيسي
     local TextLabel = Create("TextLabel", TextButton, {
         TextSize = 12,
         TextColor3 = Configs_HUB.Cor_Text,
         Text = ButtonName,
-        Size = UDim2.new(1, -35, 1, 0),
+        Size = UDim2.new(1, -35, Description and 0.5 or 1, Description and -5 or 0),
         Position = UDim2.new(0, 35, 0, 0),
         BackgroundTransparency = 1,
         TextXAlignment = "Left",
         Font = Configs_HUB.Text_Font
     })
     
-    local ImageLabel = Create("ImageLabel", TextButton, {
-        Image = "rbxassetid://3926311105",
-        Size = UDim2.new(0, 20, 0, 20),
-        Position = UDim2.new(0, 5, 0, 2.5),
-        BackgroundTransparency = 1,
-        ImageColor3 = Configs_HUB.Cor_Stroke
-    })
-    
-    -- إضافة وصف إذا كان موجوداً
+    -- إضافة الوصف إذا كان موجوداً
     if Description then
-        local DescLabel = Create("TextLabel", MainContainer, {
+        local DescLabel = Create("TextLabel", TextButton, {
             TextSize = 10,
             TextColor3 = Configs_HUB.Cor_DarkText,
             Text = Description,
-            Size = UDim2.new(1, -10, 0, 15),
-            Position = UDim2.new(0, 10, 0, 28),
+            Size = UDim2.new(1, -35, 0.5, -5),
+            Position = UDim2.new(0, 35, 0.5, 0),
             BackgroundTransparency = 1,
             TextXAlignment = "Left",
             Font = Configs_HUB.Text_Font,
@@ -801,7 +801,7 @@ end
     
     TextSetColor(TextLabel)
     
-    return MainContainer
+    return TextButton
 end
   function AddToggle(parent, Configs)
     local ToggleName = Configs.Name or "Toggle!!"

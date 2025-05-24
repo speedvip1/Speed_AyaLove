@@ -1,16 +1,40 @@
-local Configs_HUB = {
-  Cor_Hub = Color3.fromRGB(20, 0, 0),            -- أسود داكن مع لمسة حمراء
-  Cor_Options = Color3.fromRGB(40, 0, 0),        -- أسود محمر
-  Cor_Stroke = Color3.fromRGB(255, 0, 0),        -- أحمر ناري
-  Cor_Text = Color3.fromRGB(255, 50, 50),        -- أحمر فاتح للنص
-  Cor_DarkText = Color3.fromRGB(150, 0, 0),      -- أحمر داكن للنصوص الثانوية
-  Cor_ButtonHover = Color3.fromRGB(80, 0, 0),    -- لون إضافي عند تمرير الماوس
-  Cor_ButtonPressed = Color3.fromRGB(120, 0, 0), -- لون إضافي عند الضغط
-  Corner_Radius = UDim.new(0, 5),
-  Text_Font = Enum.Font.SourceSansBold,
-  Text_Size = 18,                                -- حجم نص إضافي
-  Shadow_Color = Color3.fromRGB(10, 0, 0)        -- لون الظل الإضافي
+-- Configuration for a Red UI Theme
+local RedThemeConfig = {
+    --[[ Colors ]]
+    -- Backgrounds
+    Color_HubBackground = Color3.fromRGB(20, 0, 0),      -- Main panel background
+    Color_OptionsBackground = Color3.fromRGB(40, 0, 0),  -- Options panel background
+
+    -- Borders / Strokes
+    Color_Stroke = Color3.fromRGB(255, 0, 0),          -- Outline/border color (Kept Red as requested)
+
+    -- Text
+    Color_Text = Color3.fromRGB(255, 50, 50),          -- Primary text color
+    Color_DarkText = Color3.fromRGB(150, 0, 0),        -- Secondary or disabled text color
+
+    -- Interactive Elements
+    Color_ButtonHover = Color3.fromRGB(80, 0, 0),      -- Button color on hover
+    Color_ButtonPressed = Color3.fromRGB(120, 0, 0),   -- Button color when pressed
+
+    -- Effects
+    Color_Shadow = Color3.fromRGB(10, 0, 0),           -- Shadow effect color
+
+    --[[ UI Geometry & Text ]]
+    Corner_Radius = UDim.new(0, 5),                    -- Roundness of corners
+    Text_Font = Enum.Font.SourceSansBold,              -- Default font
+    Text_Size = 18,                                    -- Default text size
 }
+
+-- Example Usage (Optional, just for context)
+-- local frame = Instance.new("Frame")
+-- frame.BackgroundColor3 = RedThemeConfig.Color_HubBackground
+-- frame.BorderSizePixel = 2
+-- frame.BorderColor3 = RedThemeConfig.Color_Stroke
+--
+-- local textLabel = Instance.new("TextLabel")
+-- textLabel.Font = RedThemeConfig.Text_Font
+-- textLabel.TextSize = RedThemeConfig.Text_Size
+-- textLabel.TextColor3 = RedThemeConfig.Color_Text
 
 local CoreGui = game:GetService("CoreGui")
 local TweenService = game:GetService("TweenService")

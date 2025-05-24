@@ -1,12 +1,11 @@
 -- Configuration for a Red UI Theme
-local Configs_HUB = {
-    --[[ Colors ]]
+local RedThemeConfig = {
     -- Backgrounds
-    Color_HubBackground = Color3.fromRGB(20, 0, 0),      -- Main panel background
-    Color_OptionsBackground = Color3.fromRGB(40, 0, 0),  -- Options panel background
+    Cor_Hub = Color3.fromRGB(20, 0, 0),      -- Main panel background
+    Cor_Options = Color3.fromRGB(40, 0, 0),  -- Options panel background
 
     -- Borders / Strokes
-    Color_Stroke = Color3.fromRGB(255, 0, 0),          -- Outline/border color (Kept Red as requested)
+    Cor_Stroke = Color3.fromRGB(255, 0, 0),          -- Outline/border color (Kept Red as requested)
 
     -- Text
     Color_Text = Color3.fromRGB(255, 50, 50),          -- Primary text color

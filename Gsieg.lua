@@ -113,7 +113,7 @@ local Menu_Notifi = Create("Frame", ScreenGui, {
   Size = UDim2.new(0, 300, 1, 0),
   Position = UDim2.new(1, 0, 0, 0),
   AnchorPoint = Vector2.new(1, 0),
-  BackgroundTransparency = 0.5
+  BackgroundTransparency = 1
 })
 
 local Padding = Create("UIPadding", Menu_Notifi, {
@@ -134,7 +134,7 @@ function MakeNotifi(Configs)
   
   local Frame1 = Create("Frame", Menu_Notifi, {
     Size = UDim2.new(2, 0, 0, 0),
-    BackgroundTransparency = 1,
+    BackgroundTransparency = 0.3,
     AutomaticSize = "Y",
     Name = "Title"
   })

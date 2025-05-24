@@ -8,15 +8,15 @@ local RedThemeConfig = {
     Cor_Stroke = Color3.fromRGB(255, 0, 0),          -- Outline/border color (Kept Red as requested)
 
     -- Text
-    Color_Text = Color3.fromRGB(255, 50, 50),          -- Primary text color
-    Color_DarkText = Color3.fromRGB(150, 0, 0),        -- Secondary or disabled text color
+    Cor_Text = Color3.fromRGB(255, 50, 50),          -- Primary text color
+    Cor_DarkText = Color3.fromRGB(150, 0, 0),        -- Secondary or disabled text color
 
     -- Interactive Elements
-    Color_ButtonHover = Color3.fromRGB(80, 0, 0),      -- Button color on hover
-    Color_ButtonPressed = Color3.fromRGB(120, 0, 0),   -- Button color when pressed
+    Cor_ButtonHover = Color3.fromRGB(80, 0, 0),      -- Button color on hover
+    Cor_ButtonPressed = Color3.fromRGB(120, 0, 0),   -- Button color when pressed
 
     -- Effects
-    Color_Shadow = Color3.fromRGB(10, 0, 0),           -- Shadow effect color
+    Shadow_Color = Color3.fromRGB(10, 0, 0),           -- Shadow effect color
 
     --[[ UI Geometry & Text ]]
     Corner_Radius = UDim.new(0, 5),                    -- Roundness of corners

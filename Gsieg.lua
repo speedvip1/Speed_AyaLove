@@ -1,5 +1,5 @@
 -- Configuration for a Red UI Theme
-local RedThemeConfig = {
+local Configs_HUB = {
     -- Backgrounds
     Cor_Hub = Color3.fromRGB(20, 0, 0),      -- Main panel background
     Cor_Options = Color3.fromRGB(40, 0, 0),  -- Options panel background

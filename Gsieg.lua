@@ -8,7 +8,7 @@ local Configs_HUB = {
     Cor_Stroke = Color3.fromRGB(255, 0, 0),          -- Outline/border color (Kept Red as requested)
 
     -- Text
-    Cor_Text = Color3.fromRGB(255, 50, 50),          -- Primary text color
+    Cor_Text = Color3.fromRGB(255, 255, 255),          -- Primary text color
     Cor_DarkText = Color3.fromRGB(150, 0, 0),        -- Secondary or disabled text color
 
     -- Interactive Elements
@@ -440,7 +440,7 @@ function MakeWindow(Configs)
     
     local Mensage = Create("TextLabel", CloseMenu, {
       Size = UDim2.new(0.8, 0, 0.25, 0),
-      Text = "هل انت متاكد تريد تحذف السكربت؟",
+      Text = "Are you sure you want to delete the script?",
       Position = UDim2.new(0.1, 0, 0.2),
       TextColor3 = Configs_HUB.Cor_Text,
       Font = Configs_HUB.Text_Font,
@@ -452,7 +452,7 @@ function MakeWindow(Configs)
       Size = UDim2.new(0.35, 0, 0.3, 0),
       Position = UDim2.new(0.1, 0, 0.5, 0),
       BackgroundColor3 = Configs_HUB.Cor_Hub,
-      Text = "حذف السكربت",
+      Text = "Yes ✅",
       Font = Configs_HUB.Text_Font,
       TextColor3 = Color3.fromRGB(240, 0, 0),
       TextSize = 20
@@ -463,7 +463,7 @@ function MakeWindow(Configs)
       Position = UDim2.new(0.9, 0, 0.5, 0),
       AnchorPoint = Vector2.new(1, 0),
       BackgroundColor3 = Configs_HUB.Cor_Hub,
-      Text = "رجوع",
+      Text = "No ❌",
       Font = Configs_HUB.Text_Font,
       TextColor3 = Color3.fromRGB(0, 240, 0),
       TextSize = 20
@@ -1788,7 +1788,7 @@ end
         Size = UDim2.new(1, -24, 0, 25),
         AnchorPoint = Vector2.new(0.5, 1),
         Position = UDim2.new(0.5, 0, 1, -8),
-        Text = "نسخ الرابط",
+        Text = "Join",
         Font = Enum.Font.GothamBold,
         TextSize = 15,
         TextColor3 = Color3.fromRGB(220, 220, 220),
@@ -1799,7 +1799,7 @@ end
         Size = UDim2.new(0, 200, 0, 40),
         Position = UDim2.new(0.5, -100, 1, -50),
         BackgroundColor3 = Color3.fromRGB(255, 0, 0),
-        Text = "تم نسخ الرابط بنجاح!",
+        Text = "Copied ✅",
         TextColor3 = Color3.fromRGB(255, 255, 255),
         Font = Enum.Font.GothamBold,
         TextSize = 14,
@@ -1815,7 +1815,7 @@ end
     -- تحديث عدد اللاعبين والفريمات والبينج كل إطار
     game:GetService("RunService").Heartbeat:Connect(function()
         -- تحديث عدد اللاعبين
-        PlayerStatsLabel.Text = "اللاعبين في السيرفر: " .. #game:GetService("Players"):GetPlayers()
+        PlayerStatsLabel.Text = "Players in Server: " .. #game:GetService("Players"):GetPlayers()
         
         -- حساب الفريمات
         frameCount = frameCount + 1
@@ -1823,14 +1823,14 @@ end
             fps = math.floor(frameCount / (tick() - lastTick))
             frameCount = 0
             lastTick = tick()
-            FPSLabel.Text = "الفريمات: " .. fps
+            FPSLabel.Text = "FPS: " .. fps
         end
         
         -- حساب البينج (Ping)
         local stats = game:GetService("Stats")
         local networkStats = stats.Network
         local ping = math.floor(networkStats.ServerStatsItem["Data Ping"]:GetValue())
-        PingLabel.Text = "نتك (Ping): " .. ping .. "ms"
+        PingLabel.Text = " (Ping): " .. ping .. "ms"
     end)
     
     local time = tick()
@@ -1855,11 +1855,11 @@ end
                 Notification.Visible = false
             end)
             
-            JoinButton.Text = "تم النسخ"
+            JoinButton.Text = "Copied ✅"
             JoinButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
             JoinButton.TextColor3 = Color3.fromRGB(150, 150, 150)
             task.wait(5)
-            JoinButton.Text = "نسخ الرابط"
+            JoinButton.Text = "Join"
             JoinButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
             JoinButton.TextColor3 = Color3.fromRGB(220, 220, 220)
         end

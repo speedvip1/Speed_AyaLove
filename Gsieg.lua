@@ -781,7 +781,7 @@ end
     
     -- الأيقونة
     local ImageLabel = Create("ImageLabel", TextButton, {
-        Image = "rbxassetid://3926311105",
+        Image = "rbxassetid://10734898355",
         Size = UDim2.new(0, 20, 0, 20),
         Position = UDim2.new(0, 5, Description and 0 or 0.5, Description and 2.5 or -10),
         AnchorPoint = Description and Vector2.new(0,0) or Vector2.new(0,0.5),

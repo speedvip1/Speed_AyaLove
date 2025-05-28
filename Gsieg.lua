@@ -67,15 +67,20 @@ local function Corner(parent, props)
   return new
 end
 
+local rainbowConnections = {} -- لتخزين اتصالات الـ Rainbow لكل Stroke
+
 local function Stroke(parent, props)
-  local new = Create("UIStroke", parent)
-  new.Color = Configs_HUB.Cor_Stroke
-  new.ApplyStrokeMode = "Border"
-  if props then
-    SetProps(new, props)
-  end
-  return new
+    local new = Create("UIStroke", parent)
+    new.Color = Configs_HUB.Cor_Stroke
+    new.ApplyStrokeMode = "Border"
+    
+    if props then
+        SetProps(new, props)
+    end
+    
+    return new
 end
+
 
 local function CreateTween(instance, prop, value, time, tweenWait)
   local tween = TweenService:Create(instance,

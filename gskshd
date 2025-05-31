@@ -1,11 +1,11 @@
 local Configs_HUB = {
-  Cor_Hub = Color3.fromRGB(25, 0, 0),            -- Deep black-red
-  Cor_Options = Color3.fromRGB(40, 0, 0),        -- Dark red
-  Cor_Stroke = Color3.fromRGB(255, 50, 50),      -- Bright red glow
-  Cor_Text = Color3.fromRGB(255, 85, 85),        -- Red text (like Minecraft "§c")
-  Cor_DarkText = Color3.fromRGB(150, 0, 0),      -- Dark red text
-  Corner_Radius = UDim.new(0, 5),
-  Text_Font = Enum.Font.SourceSansBold            -- Closest to Minecraft font in Roblox
+  Cor_Hub = Color3.fromRGB(30, 5, 5),            -- لون خلفية رئيسي أعمق مع لمسة أنيقة
+  Cor_Options = Color3.fromRGB(45, 10, 10),      -- تدرج أفتح للخلفيات الثانوية
+  Cor_Stroke = Color3.fromRGB(255, 80, 80),      -- إطار أكثر إشراقاً بتدرج مرتفع
+  Cor_Text = Color3.fromRGB(255, 120, 120),      -- نص أكثر وضوحاً مع لون دافئ
+  Cor_DarkText = Color3.fromRGB(180, 30, 30),    -- نص ثانوي مع تباين محسّن
+  Corner_Radius = UDim.new(0, 6),                -- زوايا أكثر نعومة بقليل
+  Text_Font = Enum.Font.GothamBold               -- خط أكثر عصرية (اختياري)
 }
 local CoreGui = game:GetService("CoreGui")
 local TweenService = game:GetService("TweenService")

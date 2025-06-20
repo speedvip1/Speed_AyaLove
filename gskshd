@@ -1637,5 +1637,5 @@ function MakeWindow(Configs)
         CornerRadius = UDim.new(0, 15)
     })
     
-    return Frame
+    return Menu
 end                                   
